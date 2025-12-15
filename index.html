@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="aayushma-shrestha">Aayushma Shrestha</h1>
+<p>Clifton, NJ<br>
+Email: aayushma@email.com<br>
+Phone: (201) 000-0000<br>
+GitHub: <a href="https://github.com/aayushma-stha">github.com/aayushma-stha</a></p>
+<h2 id="entry-level-web-developer--front-end-developer--it-support">Entry-Level Web Developer | Front-End Developer | IT Support</h2>
+<hr>
+<h2 id="summary">SUMMARY</h2>
+<p>Motivated and detail-oriented Web Development graduate with strong academic exposure to front-end and back-end fundamentals. Skilled in building user-friendly digital experiences and supporting technical troubleshooting. Experienced in customer service and teamwork through part-time roles while pursuing a degree. Seeking an entry-level opportunity in web development or IT.</p>
+<hr>
+<h2 id="education">EDUCATION</h2>
+<p><strong>Passaic County Community College (PCCC)</strong> – Paterson, NJ<br>
+<strong>A.A.S. Computer Information Science – WEB TECHNOLOGY</strong><br>
+Graduation: December 2027</p>
+<p><strong>Relevant Coursework:</strong><br>
+Web Development, Python, C++, Database Management, HTML/CSS, JavaScript Fundamentals,  Systems Analysis</p>
+<hr>
+<h2 id="technical-skills">TECHNICAL SKILLS</h2>
+<ul>
+<li><strong>Web:</strong> HTML, CSS, JavaScript (basic)</li>
+<li><strong>Programming:</strong> Python, C++</li>
+<li><strong>Databases:</strong> SQL basics, MySQL/Oracle (student level)</li>
+<li><strong>Tools:</strong> Git/GitHub, VS Code, WIX, MS Office 365</li>
+</ul>
+<hr>
+<h2 id="projects">PROJECTS</h2>
+<h3 id="motivational-website-%E2%80%93-wix-class-project">Motivational Website – WIX (Class Project)</h3>
+<p>Developed a responsive website promoting positivity and motivation. Designed layouts, content, navigation, and implemented accessibility and basic SEO principles.
+<a href="https://ashrestha1.wixsite.com/rise-again">Link to Rise Again</a></p>
+<h3 id="portfolio-website-%E2%80%93-cis-internship">Portfolio Website – CIS INTERNSHIP</h3>
+<p>Created a personal portfolio featuring projects, resume, and contact form. Ensured responsive styling, consistent layout, and clean code. Hosted on GitHub Pages.</p>
+<h3 id="sql-database-design-case-study">SQL Database Design Case Study</h3>
+<p>Designed and implemented database tables for three entities (Agents, Targets, Locations). Applied primary/foreign keys, check constraints, indexing, and views with SQL queries.</p>
+<hr>
+<h2 id="experience">EXPERIENCE</h2>
+<h3 id="customer-service-associate">Customer Service Associate</h3>
+<p><strong>CVS Pharmacy</strong>, Clifton, NJ | 2023 – Present</p>
+<ul>
+<li>Provide customer assistance, product guidance, and POS transaction support.</li>
+<li>Resolve issues related to digital coupons and store systems.</li>
+<li>Demonstrate reliability, multitasking, and teamwork during peak hours.</li>
+<li>Maintain store standards and support smooth daily operations.</li>
+</ul>
+<h3 id="medical-laboratory-technician">Medical Laboratory Technician</h3>
+<p><strong>Nepal</strong></p>
+<ul>
+<li>Conducted routine laboratory tests and maintained sample accuracy.</li>
+<li>Ensured compliance with quality and safety protocols.</li>
+<li>Strengthened documentation, attention to detail, and precision.</li>
+</ul>
+<hr>
+<h2 id="strengths">STRENGTHS</h2>
+<ul>
+<li>Detail-oriented and dependable</li>
+<li>Strong communication and teamwork</li>
+<li>Quick learner with technical adaptability</li>
+<li>Organized and consistent</li>
+<li>Positive attitude and problem-solving mindset</li>
+</ul>
+<hr>
+<h2 id="certifications">CERTIFICATIONS</h2>
+<ul>
+<li>Google IT Support Certificate</li>
+<li>Responsive Web Design – freeCodeCamp</li>
+<li>LinkedIn Learning / Coursera courses</li>
+</ul>
+<hr>
+<h2 id="additional-information">ADDITIONAL INFORMATION</h2>
+<ul>
+<li><strong>Languages:</strong> English, Nepali, Hindi</li>
+<li><strong>Interests:</strong> Photography, music, cooking, inspirational content creation</li>
+</ul>
+
+</body>
+</html>
