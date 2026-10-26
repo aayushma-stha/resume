@@ -1,6 +1,6 @@
 # Aayushma Shrestha
 Clifton, NJ  
-Email: aayushmas247@gmail.com 
+Email: aayushmas247@gmail.com  
 Phone: 757-774-7745  
 GitHub: [github.com/aayushma-stha](https://github.com/aayushma-stha)
 
