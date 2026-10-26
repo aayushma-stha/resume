@@ -4,8 +4,6 @@ Email: aayushmas247@gmail.com
 Phone: 757-774-7745  
 GitHub: [github.com/aayushma-stha](https://github.com/aayushma-stha)
 
-## Entry-Level Web Developer | Front-End Developer | IT Support
-
 <hr>
 
 ## SUMMARY
